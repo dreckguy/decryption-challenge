@@ -1,1 +1,1 @@
-
+file describing difficulties along the way and their solutions
