@@ -1,6 +1,7 @@
 language: python
+python:
+  - "3.7.2"
 services:
   - docker
-install: docker build -t dreckguy/decryption-challenge:latest .
-script: echo "script!"
-after_script: echo "after script!"
+install:
+  - pip install -r requirements.txt
