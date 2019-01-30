@@ -7,3 +7,6 @@ file describing difficulties along the way and their solutions:
 
 * travis is failing by my first yml definitions. Started from an example and it worked.
 
+* cannot get docker response. it might be related to address change in flasks.
+Fixed it by google how to open address in flask.
+
