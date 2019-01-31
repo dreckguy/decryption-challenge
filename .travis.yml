@@ -4,4 +4,4 @@ install:
   - docker-compose up
  script:
     provider: script
-  script: bash tests\verification.sh
+    script: bash tests\verification.sh
