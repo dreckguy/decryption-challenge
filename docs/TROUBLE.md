@@ -9,4 +9,5 @@ file describing difficulties along the way and their solutions:
 
 * cannot get docker response. it might be related to address change in flasks.
 Fixed it by google how to open address in flask.
+* readline returns bytes and need to cut newline
 
