@@ -4,8 +4,9 @@ install:
   - docker-compose up --build -d
   - sleep 5
 script:
+  - curl 127.0.0.1:5000/status | jq '.' | grep 'completed'
   - curl 127.0.0.1:5000/message | jq '.message'
-  - curl 127.0.0.1:5000/status | jq '.'
+
 after_script:
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
   - docker push dreckguy/decryption-challenge
