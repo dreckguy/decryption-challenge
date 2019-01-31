@@ -2,5 +2,6 @@ version: '3'
 services:
   server:
     build: .
+    image: dreckguy/decryption-challenge:latest
     ports:
      - "5000:5000"
