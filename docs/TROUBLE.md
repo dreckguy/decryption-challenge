@@ -11,3 +11,5 @@ file describing difficulties along the way and their solutions:
 Fixed it by google how to open address in flask.
 * readline returns bytes and need to cut newline
 
+* travis doesn't have python 3.7.2 and run into conflicts with my code
+

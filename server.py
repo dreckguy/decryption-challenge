@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 load_dotenv()
 from flask import Flask
 from flask import jsonify
-from flask_cors import CORS
 import urllib
 ENCRYPTED_FILE_ADDRESS = os.getenv("ENCRYPTED_FILE_ADDRESS")
 encryptedFile = urllib.request.urlopen(ENCRYPTED_FILE_ADDRESS)
