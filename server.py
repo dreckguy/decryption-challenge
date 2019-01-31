@@ -27,10 +27,9 @@ SHOW_STATUS_ROUTE = os.getenv("SHOW_STATUS_ROUTE")
 
 
 app = Flask(__name__)
-#CORS(app)
 @app.route('/')
 def showConnection():
-    return "Server is up and running!"
+    return "Server is up and running!\n"
 @app.route(SHOW_MESSAGE_ROUTE)
 def showMessage():
     return jsonify(messageResponse)

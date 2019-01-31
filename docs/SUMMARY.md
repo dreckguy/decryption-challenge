@@ -10,5 +10,7 @@ file explaining each step of the development process
 * setting a webserver
 * dockerize the app
 * connecting travis pipeline
+* add a test suite
+* solve the problem
 
 
