@@ -8,3 +8,4 @@ script:
   - curl 127.0.0.1:5000/status | jq '.'
 after_script:
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
+  - docker push dreckguy/decryption-challenge
