@@ -3,7 +3,7 @@ language: python
 services:
   - docker
 before_install:
-  - bash scripts\install_python.sh
+  - bash scipts\install_python.sh
 install:
   - echo "installing...."
 script:
