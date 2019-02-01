@@ -1,24 +1,13 @@
 dist: xenial
-#language: python
+language: python
 services:
   - docker
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install build-essential checkinstall
-  - sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
-  - cd /usr/src
-  - sudo wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
-  - sudo tar xzf Python-3.7.2.tgz
-  - cd Python-3.7.2
-  - sudo ./configure --enable-optimizations
-  - sudo make altinstall
-  - python3.7 -V
-  #- pip install -r requirements.txt
-  #- export FLASK_APP=server.py
+  - bash scipts\install_python.sh
 install:
   - echo "installing...."
 script:
-  - python3.7 -V
+  - python -V
 after_script:
   - docker build -t dreckguy/decryption-challenge .
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
