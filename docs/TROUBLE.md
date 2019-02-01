@@ -9,7 +9,11 @@ file describing difficulties along the way and their solutions:
 
 * cannot get docker response. it might be related to address change in flasks.
 Fixed it by google how to open address in flask.
-* readline returns bytes and need to cut newline
+* readline returns bytes and need to cut newline. Fix casting issue and trimming.
+* cannot get curl response from docker on travis. I'm trying to use the local python version.
 
-* travis doesn't have python 3.7.2 and run into conflicts with my code
+* travis doesn't have python 3.7.2 and run into conflicts with my code. I found working example to work with 3.5 and changed to it. 
+* python on travis doesn't recognize flask run command. I'm changing to python command.
+python 3.5.6 on travis doesn't work correctly with urllib. I saw I should use same travis version to solve the issue. because everything is working correctly between local and docker environments, and because I prefer using the new module I'm trying to install python new version on travis.
+
 
