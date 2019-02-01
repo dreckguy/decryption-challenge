@@ -15,9 +15,11 @@ ENCRYPTED_FILE_ADDRESS = os.getenv("ENCRYPTED_FILE_ADDRESS")
 SECRET_KEY=os.getenv('SECRET_KEY')
 
 app = Flask(__name__)
+
 @app.route('/')
 def showConnection():
     return "Server is up and running!\n"
+        
 @app.route(SHOW_MESSAGE_ROUTE)
 def showMessage():
     encryptedFile = urllib2.urlopen(ENCRYPTED_FILE_ADDRESS)
@@ -27,10 +29,7 @@ def showMessage():
     return jsonify(messageResponse)
 
 @app.route(SHOW_STATUS_ROUTE)
-def showStatus():
-    LINK_TO_GITHUB = os.getenv("LINK_TO_GITHUB")
-    LINK_TO_DOKERHUB = os.getenv("LINK_TO_DOKERHUB")
-    
+def showStatus():    
     statusResponse = {}
     statusResponse['status'] = "completed"
     statusResponse['container'] = LINK_TO_DOKERHUB
