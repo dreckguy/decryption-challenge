@@ -10,5 +10,3 @@ sudo tar xzf Python-3.7.2.tgz
 cd Python-3.7.2
 sudo ./configure --enable-optimizations
 sudo make altinstall
-alias python='python3.7'
-source ~/.bashrc
