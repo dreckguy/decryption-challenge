@@ -1,14 +1,15 @@
 import os
 from dotenv import load_dotenv
-load_dotenv()
+env_path = '.env'
+load_dotenv(dotenv_path=env_path)
 from flask import Flask
 from flask import jsonify
-import urllib
+#import urllib
 
 SHOW_MESSAGE_ROUTE = os.getenv("SHOW_MESSAGE_ROUTE")
 SHOW_STATUS_ROUTE = os.getenv("SHOW_STATUS_ROUTE")
-
-app = Flask(__name__)
+print(SHOW_MESSAGE_ROUTE)
+'''app = Flask(__name__)
 @app.route('/')
 def showConnection():
     return "Server is up and running!\n"
@@ -33,7 +34,7 @@ def showStatus():
     return jsonify(statusResponse)
 
 if __name__ == "__main__":
-    app.run()
+    app.run()'''
 
 
 
