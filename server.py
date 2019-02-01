@@ -35,6 +35,9 @@ def showStatus():
     statusResponse['project'] = LINK_TO_GITHUB
     return jsonify(statusResponse)
 
+if __name__ == "__main__":
+    app.run()
+
 
 
 
