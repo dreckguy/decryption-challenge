@@ -1,15 +1,12 @@
 import os
-#from dotenv import load_dotenv
-#load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask
 from flask import jsonify
 import urllib
 
-
-
 SHOW_MESSAGE_ROUTE = os.getenv("SHOW_MESSAGE_ROUTE")
 SHOW_STATUS_ROUTE = os.getenv("SHOW_STATUS_ROUTE")
-
 
 app = Flask(__name__)
 @app.route('/')
