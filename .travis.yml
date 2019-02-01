@@ -4,8 +4,13 @@ services:
   - docker
 before_install:
   - bash scripts/install_python.sh
-script:
   - python3.7 -V | grep 3.7.2 
+  - curl https://bootstrap.pypa.io/get-pip.py | sudo -H python3.7
+
+
+script:
+  - pip -V
+  - pip3 -V 
 after_script:
   - docker build -t dreckguy/decryption-challenge .
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
