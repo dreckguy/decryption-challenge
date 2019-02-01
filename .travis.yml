@@ -3,14 +3,13 @@ python:
   - 3.5
 services:
   - docker
+before_install:
+  - pip install -r requirements.txt
 install:
-  - docker build -t dreckguy/decryption-challenge .
-  - docker run -d -p 127.0.0.1:5000:5000 --name server dreckguy/decryption-challenge
+    - flask run
 script:
-  - docker ps | grep -q server 
   - curl 127.0.0.1:5000
- #- curl 127.0.0.1:5000/message | jq '.message'
-
 after_script:
+  - docker build -t dreckguy/decryption-challenge .
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
   - docker push dreckguy/decryption-challenge
