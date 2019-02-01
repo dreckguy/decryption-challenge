@@ -17,6 +17,8 @@ Fixed it by google how to open address in flask.
 * python 3.5.6 on travis doesn't work correctly with urllib. I saw I should use same travis version to solve the issue. because 
 * everything is working correctly between local and docker environments, and because I prefer using the new module I'm trying to * install python new version on travis. --> succeed installing the correct version on travis...
 * new problem emerge - travis new python cannot recognize modules. I'm checking what is travis default python version and writing again everything in that.
+* moving everything to python 2.. 
+* Oh my. the decryption package I found (pycrypto) is broken. searching for another one..
 
 
 
