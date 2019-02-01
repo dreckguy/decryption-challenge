@@ -4,10 +4,8 @@ services:
   - docker
 before_install:
   - bash scripts/install_python.sh
+script:
   - python3.7 -V | grep 3.7.2 
-
-install:
-  - echo "installing...."
 after_script:
   - docker build -t dreckguy/decryption-challenge .
   - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
