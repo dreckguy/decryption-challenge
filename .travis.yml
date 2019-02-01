@@ -8,7 +8,9 @@ before_install:
 install:
   - python server.py &
 after_install:
+  - echo 'sleeping...'
   - sleep 5
+  - echo 'finished sleeping'
 script:
   - curl 127.0.0.1:5000/status | jq '.status' | grep 'completed'
   - curl 127.0.0.1:5000/message | jq '.message'
