@@ -4,7 +4,7 @@ env_path = '.env'
 load_dotenv(dotenv_path=env_path)
 from flask import Flask
 from flask import jsonify
-#import urllib
+import urllib2
 
 SHOW_MESSAGE_ROUTE = os.getenv("SHOW_MESSAGE_ROUTE")
 SHOW_STATUS_ROUTE = os.getenv("SHOW_STATUS_ROUTE")
@@ -12,10 +12,10 @@ app = Flask(__name__)
 @app.route('/')
 def showConnection():
     return "Server is up and running!\n"
-'''@app.route(SHOW_MESSAGE_ROUTE)
+@app.route(SHOW_MESSAGE_ROUTE)
 def showMessage():
     ENCRYPTED_FILE_ADDRESS = os.getenv("ENCRYPTED_FILE_ADDRESS")
-    encryptedFile = urllib.request.urlopen(ENCRYPTED_FILE_ADDRESS)
+    encryptedFile = urllib2.urlopen(ENCRYPTED_FILE_ADDRESS)
     encryptedMessage = encryptedFile.readline().decode("utf-8").strip('\n')
     messageResponse = {}
     messageResponse['message'] = encryptedMessage
@@ -30,7 +30,7 @@ def showStatus():
     statusResponse['status'] = "completed"
     statusResponse['container'] = LINK_TO_DOKERHUB
     statusResponse['project'] = LINK_TO_GITHUB
-    return jsonify(statusResponse)'''
+    return jsonify(statusResponse)
 
 if __name__ == "__main__":
     app.run()
