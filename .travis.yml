@@ -13,6 +13,4 @@ script:
   - curl 127.0.0.1:5000/status | jq '.status'
   - curl 127.0.0.1:5000/message | jq '.message'
 after_script:
-  - docker build -t dreckguy/decryption-challenge .
-  - docker login --username $DOCKER_USER --password $DOCKER_PASSWORD
-  - docker push dreckguy/decryption-challenge
+  - sh scripts\publish_image.sh
