@@ -13,4 +13,4 @@ script:
   - curl 127.0.0.1:5000/status | jq '.status'
   - curl 127.0.0.1:5000/message | jq '.message'
 after_script:
-  - sh scripts\publish_image.sh
+  - sh scripts/publish_image.sh
